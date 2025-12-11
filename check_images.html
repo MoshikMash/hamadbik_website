@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בדיקת תמונות - המדביק בע״מ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            direction: rtl;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #003366;
+            margin-bottom: 30px;
+        }
+        .image-check {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .image-check.found {
+            border-color: #4caf50;
+            background: #f1f8f4;
+        }
+        .image-check.missing {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+        .image-check img {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .status {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .found .status {
+            color: #4caf50;
+        }
+        .missing .status {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>בדיקת תמונות לאתר המדביק בע״מ</h1>
+        <p>דף זה בודק אילו תמונות קיימות בתיקיית assets</p>
+        <div id="image-checks"></div>
+    </div>
+
+    <script>
+        const requiredImages = [
+            { name: 'logo.png', description: 'לוגו החברה' },
+            { name: 'founder.jpg', description: 'משה אליקים ז״ל - המייסד' },
+            { name: 'rahamim_young.jpg', description: 'רחמים אליקים הצעיר' },
+            { name: 'gallery_1.jpg', description: 'גלריה 1 - רחמים עם אביו' },
+            { name: 'gallery_2.jpg', description: 'גלריה 2 - עובדים במפעל' },
+            { name: 'gallery_3.jpg', description: 'גלריה 3 - רחמים עובד' },
+            { name: 'gallery_4.jpg', description: 'גלריה 4 - חדר אוכל' },
+            { name: 'gallery_5.jpg', description: 'גלריה 5 - תמונה קבוצתית' },
+            { name: 'gallery_6.jpg', description: 'גלריה 6 - מבט כללי (אופציונלי)' }
+        ];
+
+        const container = document.getElementById('image-checks');
+
+        requiredImages.forEach(img => {
+            const checkDiv = document.createElement('div');
+            checkDiv.className = 'image-check';
+            
+            const imgElement = new Image();
+            imgElement.src = `assets/${img.name}`;
+            
+            imgElement.onload = function() {
+                checkDiv.classList.add('found');
+                checkDiv.innerHTML = `
+                    <div class="status">✓ נמצא: ${img.name}</div>
+                    <div>${img.description}</div>
+                    <img src="assets/${img.name}" alt="${img.description}">
+                `;
+            };
+            
+            imgElement.onerror = function() {
+                checkDiv.classList.add('missing');
+                checkDiv.innerHTML = `
+                    <div class="status">✗ חסר: ${img.name}</div>
+                    <div>${img.description}</div>
+                `;
+            };
+            
+            container.appendChild(checkDiv);
+        });
+    </script>
+</body>
+</html>
+
