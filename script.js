@@ -61,12 +61,83 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
 
-    // Language switch button (prepared for future English translation)
+    // Language switching functionality
+    let currentLang = localStorage.getItem('language') || 'he';
+    
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        
+        // Update HTML lang and dir attributes
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+        document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+        
+        // Update button text
+        const langText = document.getElementById('langText');
+        if (langText) {
+            langText.textContent = lang === 'he' ? 'EN' : 'HE';
+        }
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else {
+                    element.innerHTML = translations[lang][key];
+                }
+            }
+        });
+        
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && lang === 'en') {
+            metaDesc.content = 'Hamadbik Ltd. - Leading vehicle parts renewal specialists. Years of experience with government institutions and major garages.';
+        } else if (metaDesc) {
+            metaDesc.content = 'המדביק בע״מ - מובילים בתחום חידוש חלקי חילוף לרכב. ניסיון של שנים רבות בעבודה עם מוסדות ממשלתיים ומוסכים גדולים.';
+        }
+        
+        // Update title
+        document.title = lang === 'he' ? 'המדביק בע״מ - חידוש חלקי חילוף לרכב' : 'Hamadbik Ltd. - Vehicle Parts Renewal';
+        
+        // Update navigation text alignment for LTR/RTL
+        const navList = document.querySelector('.nav-list');
+        if (navList) {
+            navList.style.justifyContent = lang === 'he' ? 'flex-end' : 'flex-start';
+        }
+        
+        // Update Google Maps iframe language
+        const googleMap = document.getElementById('googleMap');
+        if (googleMap) {
+            if (lang === 'en') {
+                googleMap.src = 'https://www.google.com/maps?q=Hamadbik+Ltd.+16+Beit+Alfa+Street+Tel+Aviv&hl=en&gl=il&ie=UTF8&t=m&z=15&iwloc=B&output=embed&markers=color:0x25D366|label:Hamadbik+Ltd.|32.0652778,34.7894444';
+            } else {
+                googleMap.src = 'https://www.google.com/maps?q=המדביק בע״מ בית אלפא 16 תל אביב&hl=he&gl=il&ie=UTF8&t=m&z=15&iwloc=B&output=embed&markers=color:0x25D366|label:המדביק בע״מ|32.0652778,34.7894444';
+            }
+        }
+        
+        // Update map navigation link language
+        const mapNavLink = document.querySelector('.btn-navigate');
+        if (mapNavLink) {
+            if (lang === 'en') {
+                mapNavLink.href = 'https://www.google.com/maps/dir/?api=1&destination=32.0652778,34.7894444&hl=en';
+            } else {
+                mapNavLink.href = 'https://www.google.com/maps/dir/?api=1&destination=32.0652778,34.7894444&hl=he';
+            }
+        }
+    }
+    
+    // Initialize language on page load
+    setLanguage(currentLang);
+    
+    // Language switch button click handler
     const langSwitch = document.getElementById('langSwitch');
     if (langSwitch) {
         langSwitch.addEventListener('click', function() {
-            // This will be implemented later when English translation is added
-            console.log('Language switch clicked - to be implemented');
+            const newLang = currentLang === 'he' ? 'en' : 'he';
+            setLanguage(newLang);
         });
     }
 
