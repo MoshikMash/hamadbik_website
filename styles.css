@@ -1014,20 +1014,12 @@ section {
     .nav-list {
         justify-content: center;
         gap: 0.5rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .nav-list::-webkit-scrollbar {
-        display: none;
+        flex-wrap: wrap;
+        max-width: 100%;
     }
 
     .nav-link {
         font-size: 0.9rem;
-        white-space: nowrap;
         padding: 0.4rem 0.8rem;
     }
 
@@ -1198,13 +1190,12 @@ section {
     .nav-list {
         flex-direction: row;
         gap: 0.5rem;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-link {
         font-size: 0.85rem;
-        white-space: nowrap;
         padding: 0.4rem 0.7rem;
     }
 }
