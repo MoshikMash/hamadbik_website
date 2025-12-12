@@ -64,9 +64,9 @@ const translations = {
         team_member3_name: "אייל ברכה",
         team_member3_position: "מנהל מכירות",
         team_member4_name: "נחום צלאח",
-        team_member4_position: "מנהל חנות",
+        team_member4_position: "מנהל לוגיסטיקה",
         team_member5_name: "ישראל בן ארויה",
-        team_member5_position: "מנהל לוגיסטיקה",
+        team_member5_position: "מנהל מחסנים ומלאי",
         
         // Clients Section
         clients_title: "בין לקוחותינו",
@@ -179,9 +179,9 @@ const translations = {
         team_member3_name: "Eyal Bracha",
         team_member3_position: "Sales Manager",
         team_member4_name: "Nachum Tzalah",
-        team_member4_position: "Store Manager",
+        team_member4_position: "Logistics Manager",
         team_member5_name: "Yisrael Ben Aroya",
-        team_member5_position: "Logistics Manager",
+        team_member5_position: "Warehouse & Inventory Manager",
         
         // Clients Section
         clients_title: "Our Clients",
