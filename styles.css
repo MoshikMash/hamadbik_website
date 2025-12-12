@@ -52,6 +52,8 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .logo-container {
@@ -64,11 +66,54 @@ body {
     object-fit: contain;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav {
+    display: block !important;
+    flex: 1;
+    min-width: 200px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+}
+
 .nav-list {
     display: flex;
     list-style: none;
     gap: 2rem;
     flex-wrap: wrap;
+    justify-content: flex-end;
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav-link {
@@ -570,13 +615,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-light);
-    padding: 8px;
-    transition: box-shadow 0.3s;
+    background: transparent;
+    padding: 0;
+    transition: transform 0.3s;
 }
 
 .team-member:hover .team-image-container {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
 }
 
 .team-image {
@@ -1003,6 +1048,49 @@ section {
     opacity: 0.9;
 }
 
+/* Desktop - ensure nav is always visible */
+@media (min-width: 769px) {
+    .header-content {
+        flex-wrap: nowrap;
+    }
+    
+    .header-content .nav {
+        order: 2;
+        flex: 1;
+    }
+    
+    .header-content .menu-toggle {
+        order: 3;
+        display: none !important;
+    }
+    
+    .nav {
+        position: static !important;
+        max-height: none !important;
+        overflow: visible !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        display: block !important;
+        width: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+    }
+    
+    .nav-list {
+        flex-direction: row !important;
+        padding: 0 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .nav-link {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     html, body {
@@ -1016,26 +1104,70 @@ section {
         padding: 0 15px;
     }
 
+    .menu-toggle {
+        display: flex;
+    }
+
     .header-content {
         flex-direction: column;
-        gap: 1rem;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0;
+        position: relative;
+    }
+    
+    .logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav {
+        position: static !important;
+        background: transparent !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.3s ease-out !important;
+        width: 100% !important;
+        z-index: 1001;
+        order: 3;
+        margin-top: 0;
+    }
+
+    .nav.active {
+        max-height: 1000px !important;
+        overflow: visible !important;
     }
 
     .nav-list {
-        justify-content: center;
-        gap: 0.5rem;
+        flex-direction: row;
         flex-wrap: wrap;
-        max-width: 100%;
+        padding: 1rem 0;
+        gap: 0.5rem;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .nav-list li {
-        flex: 0 1 auto;
+        flex: 0 1 calc(50% - 0.25rem);
+        min-width: 0;
     }
 
     .nav-link {
         font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        padding: 0.75rem 0.5rem;
         display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: 3px;
+        transition: background 0.3s;
+    }
+    
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .hero-title {

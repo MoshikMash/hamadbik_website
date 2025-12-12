@@ -1,5 +1,25 @@
 // Smooth scroll for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    }
+
     // Navigation smooth scroll
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
