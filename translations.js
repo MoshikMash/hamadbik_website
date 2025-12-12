@@ -35,6 +35,7 @@ const translations = {
         about_carousel_cap3: "מחלקת שיפוץ הגהים - רפי עמרה (בתמונה) מוביל את המחלקה",
         about_carousel_cap4: "מחלקת שיפוץ ציריות - מימים הראשונים של המפעל, בהובלת ראובן ז״ל, חבר טוב של משה ז״ל המייסד",
         about_carousel_cap5: "מחלקת שיפוץ הגהים - גרשון אשר עוזר לרפי בהובלת המחלקה",
+        about_carousel_cap6: "משה ז״ל המייסד בשנים הראשונות של המפעל",
         
         // Story Section
         story_title: "הסיפור שלנו",
@@ -150,6 +151,7 @@ const translations = {
         about_carousel_cap3: "Steering refurbishment department - Rafi Amra (pictured) leads the department",
         about_carousel_cap4: "Axle refurbishment department - from the early days of the plant, led by Reuven z\"l, a close friend of founder Moshe z\"l",
         about_carousel_cap5: "Steering refurbishment department - Gershon assisting Rafi in leading the department",
+        about_carousel_cap6: "Moshe z\"l the founder in the early years of the factory",
         
         // Story Section
         story_title: "Our Story",
