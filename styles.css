@@ -192,7 +192,7 @@ html[dir="ltr"] .nav-list {
     height: 80px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 2rem;
+    margin: 1rem 0;
 }
 
 .hero-content {
