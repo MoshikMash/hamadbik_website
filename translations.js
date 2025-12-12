@@ -14,6 +14,7 @@ const translations = {
         hero_title: "המדביק בע״מ",
         hero_subtitle: "מובילים בתחום חידוש חלקי חילוף לרכב",
         hero_description: "ניסיון של שנים רבות בעבודה עם מוסדות ממשלתיים ומוסכים גדולים",
+        hero_call_now: "התקשר עכשיו",
         hero_cta: "צור קשר",
         hero_cta: "צור קשר",
         
@@ -106,6 +107,8 @@ const translations = {
         contact_call_aharon: "התקשר לאהרון",
         contact_whatsapp_aharon: "💬 וואטסאפ לאהרון",
         contact_navigate: "נווט לכתובת",
+        contact_call: "התקשר",
+        contact_whatsapp: "WhatsApp",
         map_address: "רחוב בית אלפא 16, תל אביב-יפו, מיקוד: 6721916",
         
         // Footer
@@ -126,6 +129,7 @@ const translations = {
         hero_title: "Hamadbik Ltd.",
         hero_subtitle: "Leading Vehicle Parts Renewal Specialists",
         hero_description: "Years of experience working with government institutions and major garages",
+        hero_call_now: "Call Now",
         hero_cta: "Contact Us",
         hero_cta: "Contact Us",
         
@@ -218,6 +222,8 @@ const translations = {
         contact_call_aharon: "Call Aharon",
         contact_whatsapp_aharon: "💬 WhatsApp Aharon",
         contact_navigate: "Navigate to Address",
+        contact_call: "Call",
+        contact_whatsapp: "WhatsApp",
         map_address: "16 Beit Alfa Street, Tel Aviv-Yafo, Postal Code: 6721916",
         
         // Footer
