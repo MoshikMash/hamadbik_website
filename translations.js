@@ -1,6 +1,7 @@
 // Translations for the website
 const translations = {
     he: {
+        skip_to_content: "דלג לתוכן",
         // Navigation
         nav_home: "בית",
         nav_about: "אודות",
@@ -15,7 +16,6 @@ const translations = {
         hero_subtitle: "מובילים בתחום חידוש חלקי חילוף לרכב",
         hero_description: "ניסיון של שנים רבות בעבודה עם מוסדות ממשלתיים ומוסכים גדולים",
         hero_call_now: "התקשר עכשיו",
-        hero_cta: "צור קשר",
         hero_cta: "צור קשר",
         
         // About Section
@@ -48,7 +48,7 @@ const translations = {
         story_p3: "משה לא היה רק איש מקצוע בחסד, אלא אדם ששמו הלך לפניו למרחקים. הוא היה ידוע כאיש ישר, צנוע וטוב לב. כל מי שפגש אותו – לקוח, ספק או עובד – ידע להעריך ולהוקיר את יושרתו. המוניטין של \"המדביק\" נבנה על בסיס האישיות המיוחדת שלו: מילה זו מילה, ועבודה זו עבודה.",
         story_nextgen_title: "דור ההמשך",
         story_nextgen_p1: "לימים, עבר הניהול לידי הדור השני, שממשיך לשאת את הלפיד בגאווה.",
-        story_nextgen_p2: "חתנו של משה, <strong>אהרון</strong>, ובנו <strong>רחמים</strong>, לקחו את המושכות לידיהם מתוך תחושת שליחות עמוקה. השניים המשיכו לפתח את המקום, להרחיב את היכולות הטכנולוגיות ולהתאים את המפעל לאתגרי התעשייה המודרנית, אך מעולם לא זזו מהדרך שהתווה המייסד.",
+        story_nextgen_p2: "בנו של משה, <strong>רחמים</strong>, וחתנו <strong>אהרון</strong>, לקחו את המושכות לידיהם מתוך תחושת שליחות עמוקה. השניים המשיכו לפתח את המקום, להרחיב את היכולות הטכנולוגיות ולהתאים את המפעל לאתגרי התעשייה המודרנית, אך מעולם לא זזו מהדרך שהתווה המייסד.",
         story_nextgen_note: "כבר מילדות, רחמים גדל במפעל, עזר לאביו ולמד את המלאכה מהיסוד. התמונה ההיסטורית מציגה את רחמים הצעיר עובד לצד אביו במפעל, מה שממחיש את המסורת המשפחתית והמחויבות העמוקה למקצוע.",
         story_nextgen_caption: "רחמים אליקים הצעיר עובד במפעל עם אביו משה אליקים ז״ל",
         story_legacy_title: "מורשת בסטנדרט גבוה",
@@ -117,6 +117,7 @@ const translations = {
         footer_tagline: "נוסד ב-1968 | מובילים בתחום חידוש חלקי חילוף לרכב"
     },
     en: {
+        skip_to_content: "Skip to content",
         // Navigation
         nav_home: "Home",
         nav_about: "About",
@@ -131,7 +132,6 @@ const translations = {
         hero_subtitle: "Leading Vehicle Parts Renewal Specialists",
         hero_description: "Years of experience working with government institutions and major garages",
         hero_call_now: "Call Now",
-        hero_cta: "Contact Us",
         hero_cta: "Contact Us",
         
         // About Section
@@ -164,7 +164,7 @@ const translations = {
         story_p3: "Moshe was not only an outstanding professional but a man whose name preceded him far and wide. He was known as honest, humble, and kind-hearted. Everyone who met him—customer, supplier, or employee—appreciated his integrity. The reputation of “Hamadbik” was built on his unique character: his word was his bond, and his work was meticulous.",
         story_nextgen_title: "The Next Generation",
         story_nextgen_p1: "In time, management passed to the second generation, proudly carrying the torch.",
-        story_nextgen_p2: "Moshe’s son-in-law, <strong>Aharon</strong>, and his son, <strong>Rahamim</strong>, took the reins with a deep sense of mission. They continued to develop the plant, expand its technological capabilities, and adapt it to the challenges of modern industry—never straying from the founder’s path.",
+        story_nextgen_p2: "Moshe's son, <strong>Rahamim</strong>, and his son-in-law, <strong>Aharon</strong>, took the reins with a deep sense of mission. They continued to develop the plant, expand its technological capabilities, and adapt it to the challenges of modern industry—never straying from the founder's path.",
         story_nextgen_note: "From a young age, Rahamim grew up in the plant, helping his father and learning the craft from the ground up. The historic photo shows young Rahamim working alongside his father in the plant, illustrating the family tradition and deep commitment to the profession.",
         story_nextgen_caption: "Young Rahamim Elyakim working in the plant with his father, Moshe Elyakim z\"l",
         story_legacy_title: "Legacy with High Standards",

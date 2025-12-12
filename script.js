@@ -5,18 +5,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.getElementById('mainNav');
     
     if (menuToggle && mainNav) {
+        const setMenuOpen = (open) => {
+            menuToggle.classList.toggle('active', open);
+            mainNav.classList.toggle('active', open);
+            menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
         menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
+            const isOpen = menuToggle.classList.contains('active');
+            setMenuOpen(!isOpen);
         });
 
         // Close menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
+                setMenuOpen(false);
             });
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setMenuOpen(false);
+        });
+
+        // Close when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            const isOpen = menuToggle.classList.contains('active');
+            if (!isOpen) return;
+            if (menuToggle.contains(e.target) || mainNav.contains(e.target)) return;
+            setMenuOpen(false);
         });
     }
 

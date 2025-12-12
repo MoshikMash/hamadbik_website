@@ -29,6 +29,11 @@
     <meta name="twitter:image" content="https://hamadbikltd.com/assets/og-image.png">
     <meta name="twitter:image:alt" content="המדביק בע״מ - חידוש חלקי חילוף לרכב">
     
+    <!-- Performance hints -->
+    <link rel="preload" as="image" href="assets/logo.png" fetchpriority="high">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
@@ -74,14 +79,15 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#mainContent" data-translate="skip_to_content">דלג לתוכן</a>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="logo" loading="eager">
+                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="logo" loading="eager" decoding="async" fetchpriority="high">
                 </div>
-                <nav class="nav" id="mainNav">
+                <nav class="nav" id="mainNav" aria-label="Main">
                     <ul class="nav-list">
                         <li><a href="#home" class="nav-link" data-translate="nav_home">בית</a></li>
                         <li><a href="#about" class="nav-link" data-translate="nav_about">אודות</a></li>
@@ -92,25 +98,26 @@
                         <li><a href="#contact" class="nav-link" data-translate="nav_contact">צור קשר</a></li>
                     </ul>
                 </nav>
-                <button class="menu-toggle" id="menuToggle" aria-label="תפריט">
+                <button class="menu-toggle" id="menuToggle" aria-label="תפריט" aria-controls="mainNav" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <button class="lang-switch" id="langSwitch">
+                <button class="lang-switch" id="langSwitch" aria-label="Switch language">
                     <span id="langText">EN</span>
                 </button>
             </div>
         </div>
     </header>
 
+    <main id="mainContent">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title" data-translate="hero_title">המדביק בע״מ</h1>
                 <div class="hero-logo-mobile">
-                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="hero-logo-img" loading="eager">
+                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="hero-logo-img" loading="eager" decoding="async" fetchpriority="high">
                 </div>
                 <p class="hero-subtitle" data-translate="hero_subtitle">מובילים בתחום חידוש חלקי חילוף לרכב</p>
                 <p class="hero-description" data-translate="hero_description">ניסיון של שנים רבות בעבודה עם מוסדות ממשלתיים ומוסכים גדולים</p>
@@ -154,27 +161,27 @@
                             <div class="carousel-wrapper">
                                 <div class="carousel-track">
                                     <div class="carousel-slide active">
-                                        <img src="assets/employees/gallery_1.png" alt="חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות" loading="lazy">
+                                        <img src="assets/employees/gallery_1.png" alt="חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap1">חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות</p>
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/employees/gallery_2.png" alt="חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות" loading="lazy">
+                                        <img src="assets/employees/gallery_2.png" alt="חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap2">חדר אוכל במפעל - מקום מפגש לעובדים במהלך הפסקות</p>
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/employees/gallery_3.png" alt="מחלקת שיפוץ הגהים - רפי עמרה מוביל את המחלקה" loading="lazy">
+                                        <img src="assets/employees/gallery_3.png" alt="מחלקת שיפוץ הגהים - רפי עמרה מוביל את המחלקה" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap3">מחלקת שיפוץ הגהים - רפי עמרה (בתמונה) מוביל את המחלקה</p>
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/employees/gallery_4.png" alt="מחלקת שיפוץ ציריות - מימים הראשונים של המפעל" loading="lazy">
+                                        <img src="assets/employees/gallery_4.png" alt="מחלקת שיפוץ ציריות - מימים הראשונים של המפעל" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap4">מחלקת שיפוץ ציריות - מימים הראשונים של המפעל, בהובלת ראובן ז״ל, חבר טוב של משה ז״ל המייסד</p>
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/employees/gallery_5.png" alt="מחלקת שיפוץ הגהים - גרשון עוזר לרפי" loading="lazy">
+                                        <img src="assets/employees/gallery_5.png" alt="מחלקת שיפוץ הגהים - גרשון עוזר לרפי" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap5">מחלקת שיפוץ הגהים - גרשון אשר עוזר לרפי בהובלת המחלקה</p>
                                     </div>
                                     <div class="carousel-slide">
-                                        <img src="assets/moshe_young.png" alt="משה ז״ל המייסד בשנים הראשונות של המפעל" loading="lazy">
+                                        <img src="assets/moshe_young.png" alt="משה ז״ל המייסד בשנים הראשונות של המפעל" loading="lazy" decoding="async">
                                         <p class="carousel-caption" data-translate="about_carousel_cap6">משה ז״ל המייסד בשנים הראשונות של המפעל</p>
                                     </div>
                                 </div>
@@ -209,7 +216,7 @@
 
                 <div class="founder-section">
                     <div class="founder-image-container">
-                        <img src="assets/founder.png" alt="משה אליקים ז״ל - מייסד המדביק בע״מ" class="founder-image" loading="lazy">
+                        <img src="assets/founder.png" alt="משה אליקים ז״ל - מייסד המדביק בע״מ" class="founder-image" loading="lazy" decoding="async">
                         <p class="founder-caption" data-translate="founder_caption">משה אליקים ז״ל - מייסד המדביק בע״מ</p>
                     </div>
                     <div class="founder-story">
@@ -239,7 +246,7 @@
                                 לימים, עבר הניהול לידי הדור השני, שממשיך לשאת את הלפיד בגאווה.
                             </p>
                             <p data-translate="story_nextgen_p2">
-                                חתנו של משה, <strong>אהרון</strong>, ובנו <strong>רחמים</strong>, לקחו את המושכות לידיהם 
+                                בנו של משה, <strong>רחמים</strong>, וחתנו <strong>אהרון</strong>, לקחו את המושכות לידיהם 
                                 מתוך תחושת שליחות עמוקה. השניים המשיכו לפתח את המקום, להרחיב את היכולות הטכנולוגיות 
                                 ולהתאים את המפעל לאתגרי התעשייה המודרנית, אך מעולם לא זזו מהדרך שהתווה המייסד.
                             </p>
@@ -250,7 +257,7 @@
                             </p>
                         </div>
                         <div class="next-gen-image-container">
-                            <img src="assets/rahamim_young.png" alt="רחמים אליקים הצעיר עובד במפעל עם אביו משה" class="next-gen-image" loading="lazy">
+                            <img src="assets/rahamim_young.png" alt="רחמים אליקים הצעיר עובד במפעל עם אביו משה" class="next-gen-image" loading="lazy" decoding="async">
                             <p class="next-gen-caption" data-translate="story_nextgen_caption">רחמים אליקים הצעיר עובד במפעל עם אביו משה אליקים ז״ל</p>
                         </div>
                     </div>
@@ -281,35 +288,35 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="team-image-container">
-                        <img src="assets/main_staff/Aharon.png" alt="אהרון מש - מנכ״ל המדביק בע״מ" class="team-image" loading="lazy">
+                        <img src="assets/main_staff/Aharon.png" alt="אהרון מש - מנכ״ל המדביק בע״מ" class="team-image" loading="lazy" decoding="async">
                     </div>
                     <h3 class="team-name" data-translate="team_member1_name">אהרון מש</h3>
                     <p class="team-position" data-translate="team_member1_position">מנכ״ל</p>
                 </div>
                 <div class="team-member">
                     <div class="team-image-container">
-                        <img src="assets/main_staff/Eli.png" alt="אלי צבטני - מנהל שיווק המדביק בע״מ" class="team-image" loading="lazy">
+                        <img src="assets/main_staff/Eli.png" alt="אלי צבטני - מנהל שיווק המדביק בע״מ" class="team-image" loading="lazy" decoding="async">
                     </div>
                     <h3 class="team-name" data-translate="team_member2_name">אלי צבטני</h3>
                     <p class="team-position" data-translate="team_member2_position">מנהל שיווק</p>
                 </div>
                 <div class="team-member">
                     <div class="team-image-container">
-                        <img src="assets/main_staff/Eyal.png" alt="אייל ברכה - מנהל מכירות המדביק בע״מ" class="team-image" loading="lazy">
+                        <img src="assets/main_staff/Eyal.png" alt="אייל ברכה - מנהל מכירות המדביק בע״מ" class="team-image" loading="lazy" decoding="async">
                     </div>
                     <h3 class="team-name" data-translate="team_member3_name">אייל ברכה</h3>
                     <p class="team-position" data-translate="team_member3_position">מנהל מכירות</p>
                 </div>
                 <div class="team-member">
                     <div class="team-image-container">
-                        <img src="assets/main_staff/Nachum.png" alt="נחום צלאח - מנהל לוגיסטיקה המדביק בע״מ" class="team-image" loading="lazy">
+                        <img src="assets/main_staff/Nachum.png" alt="נחום צלאח - מנהל לוגיסטיקה המדביק בע״מ" class="team-image" loading="lazy" decoding="async">
                     </div>
                     <h3 class="team-name" data-translate="team_member4_name">נחום צלאח</h3>
                     <p class="team-position" data-translate="team_member4_position">מנהל לוגיסטיקה</p>
                 </div>
                 <div class="team-member">
                     <div class="team-image-container">
-                        <img src="assets/main_staff/Yisrael.png" alt="ישראל בן ארויה - מנהל מחסנים ומלאי המדביק בע״מ" class="team-image" loading="lazy">
+                        <img src="assets/main_staff/Yisrael.png" alt="ישראל בן ארויה - מנהל מחסנים ומלאי המדביק בע״מ" class="team-image" loading="lazy" decoding="async">
                     </div>
                     <h3 class="team-name" data-translate="team_member5_name">ישראל בן ארויה</h3>
                     <p class="team-position" data-translate="team_member5_position">מנהל מחסנים ומלאי</p>
@@ -325,10 +332,10 @@
             <p class="clients-intro" data-translate="clients_intro">אנו גאים לשרת מוסדות מובילים במשק</p>
             <div class="clients-logos">
                 <div class="client-logo">
-                    <img src="assets/clients/idf_logo.png" alt="צה״ל - צבא הגנה לישראל - לקוח של המדביק בע״מ" class="client-logo-img" loading="lazy">
+                    <img src="assets/clients/idf_logo.png" alt="צה״ל - צבא הגנה לישראל - לקוח של המדביק בע״מ" class="client-logo-img" loading="lazy" decoding="async">
                 </div>
                 <div class="client-logo">
-                    <img src="assets/clients/police_logo.png" alt="משטרת ישראל - לקוח של המדביק בע״מ" class="client-logo-img" loading="lazy">
+                    <img src="assets/clients/police_logo.png" alt="משטרת ישראל - לקוח של המדביק בע״מ" class="client-logo-img" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -478,12 +485,14 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="footer-logo-img" loading="lazy">
+                    <img src="assets/logo.png" alt="המדביק בע״מ - לוגו החברה" class="footer-logo-img" loading="lazy" decoding="async">
                 </div>
                 <div class="footer-info">
                     <p data-translate="footer_rights">&copy; 2024 המדביק בע״מ. כל הזכויות שמורות.</p>
