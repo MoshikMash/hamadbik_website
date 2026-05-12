@@ -76,8 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    window.addEventListener('scroll', updateActiveNav);
-    updateActiveNav();
+    // Back to top button + header scroll state
+    const backToTop = document.getElementById('backToTop');
+    const header = document.querySelector('.header');
+
+    function onScroll() {
+        updateActiveNav();
+        const y = window.pageYOffset;
+        if (header) header.classList.toggle('scrolled', y > 30);
+        if (backToTop) backToTop.classList.toggle('visible', y > 400);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Language switching functionality
     let currentLang = localStorage.getItem('language') || 'he';
@@ -223,7 +240,29 @@ document.addEventListener('DOMContentLoaded', function() {
         dot.addEventListener('click', () => showSlide(index));
     });
 
-    // Auto-play carousel (optional - uncomment to enable)
-    // setInterval(nextSlide, 5000);
+    // Auto-play carousel with pause on hover/focus + reduced-motion respect
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const carouselContainer = document.querySelector('.carousel-container');
+    let carouselTimer = null;
+
+    function startCarousel() {
+        if (prefersReducedMotion || carouselSlides.length < 2) return;
+        stopCarousel();
+        carouselTimer = setInterval(nextSlide, 6000);
+    }
+    function stopCarousel() {
+        if (carouselTimer) { clearInterval(carouselTimer); carouselTimer = null; }
+    }
+
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopCarousel);
+        carouselContainer.addEventListener('mouseleave', startCarousel);
+        carouselContainer.addEventListener('focusin', stopCarousel);
+        carouselContainer.addEventListener('focusout', startCarousel);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) stopCarousel(); else startCarousel();
+        });
+        startCarousel();
+    }
 });
 
